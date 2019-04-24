@@ -14,4 +14,5 @@ const bus = {
 
 //3.2 Object.values
 
-console.log(data)
+console.log(Object.keys(bus))
+console.log(Object.keys(data))
