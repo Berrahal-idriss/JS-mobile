@@ -1,19 +1,19 @@
 //2.1 Fonctions simples
-const sayHello = function() {
-    console.log('Hello')
-}
-
-const sayMyName = function(first, last) {
-    console.log(first, last)
-}
-
-const sayMyAge = function(age) {
-    console.log('You are ' + age + ' years old')
-}
-
-sayHello()
-sayMyName('Odile', 'Crok')
-sayMyAge(23)
+// const sayHello = ()=> {
+//     console.log('Hello')
+// }
+//
+// const sayMyName = (first, last)=> {
+//     console.log(first, last)
+// }
+//
+// const sayMyAge = (age)=> {
+//     console.log('You are ' + age + ' years old')
+// }
+//
+// sayHello()
+// sayMyName('Odile', 'Crok')
+// sayMyAge(23)
 
 //----------------------//
 //2.2 this
@@ -22,7 +22,7 @@ const object = {
     color: 'red',
     shape: 'circle',
     threeDimensions: false,
-    showThis: function() {
+    showThis: ()=>{         //En modifiant la fonction pour une fonction fléché l'objet "this" est alouer à l'objet parent dans le cas present il n'y a pas d'objet parent voila pourquoi une erreur apparait
         console.log(this)
     }
 }
@@ -38,11 +38,14 @@ const odile = {
         last: 'Crok'
     },
     age: 23,
-    //sayHello: ...
-    //sayMyName:...
-    //sayMyAge:...
+    sayHello:()=>{"Hello"},
+     sayMyName:()=>{
+        console.log(odile.name)
+     }  ,
+    sayMyAge:()=>{
+        console.log(odile.age)}
 }
 
-//odile.sayHello()
-//odile.sayMyName()
-//odile.sayMyAge()
+odile.sayHello()
+ odile.sayMyName()
+ odile.sayMyAge()
